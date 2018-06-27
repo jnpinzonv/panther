@@ -14,11 +14,11 @@ class Roles extends Request
      * 
      * @var string
      */
-    const NOMBRE_TABLA = "j4rol";
+    const NAME_TABLE = "j4rol";
 
     public function init()
     {
-        parent::$nameTable = self::NOMBRE_TABLA;
+        parent::$nameTable = self::NAME_TABLE;
         parent::$queryInsert = INTSERT_ROL;
         parent::$queryUpdate = UPDATE_ROL;
     }

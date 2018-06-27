@@ -10,7 +10,9 @@
 define("RESOURCES_URL", array(
     'users',
     'useraction',
-    'roles'
+    'roles',
+    //Business
+    'persons'
 ), TRUE);
 
 /**

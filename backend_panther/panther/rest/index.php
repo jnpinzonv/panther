@@ -25,6 +25,11 @@ require 'util/JSONUtil.php';
 require 'model/core/segurity/User.php';
 require 'querys/core/SegurityQuery.php';
 
+//Business
+require 'ctrl/business/Persons.php';
+require 'model/business/Person.php';
+require 'querys/business/BusinessQuery.php';
+
 // Preparar manejo de excepciones
 /**
  * *Formatos permitidos enviados por parametro
@@ -52,10 +57,14 @@ set_exception_handler(function ($exception) use ($view) {
 });
 
 // Extraer segmento de la url
-if (isset($_GET['PATH_INFO']))
+if (isset($_GET['PATH_INFO'])){
     $request = explode('/', $_GET['PATH_INFO']);
-else
+    //Descomentariar para saber url
+   // print_r($request);
+}
+else{
     throw new ExcepcionAPI(BAD_REQUEST, ST400, error_url);
+}
 
 // Separación de resources de la url
 $resource = array_shift($request);
@@ -89,6 +98,8 @@ switch ($method) {
                 ), $request);
                 $view->viewPrint($answer);
                 break;
+            }else{
+                throw new ExcepcionAPI(BAD_REQUEST, ST400, error_url);
             }
         }
     default:

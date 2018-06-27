@@ -65,4 +65,25 @@ ALTER TABLE `j4user`
 -- AUTO_INCREMENT de la tabla `user`
 --
 ALTER TABLE `j4user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;COMMIT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  
+CREATE TABLE `person` (
+  `id` int(11) NOT NULL,
+  `name` varchar(30) NOT NULL,
+  `lastName` varchar(30) NOT NULL,
+  `phone` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Indices de la tabla `person`
+--
+ALTER TABLE `person`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT de la tabla `person`
+--
+ALTER TABLE `person`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;COMMIT;
+
+INSERT INTO person(name, lastName, phone) VALUES ('Nicolás','Pinzón',3419478);

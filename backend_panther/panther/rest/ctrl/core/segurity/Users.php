@@ -14,7 +14,7 @@ class Users extends Request
      *
      * @var string
      */
-    const NOMBRE_TABLA = "j4user";
+    const NAME_TABLE = "j4user";
 
     /**
      *
@@ -23,7 +23,7 @@ class Users extends Request
      */
     public function init()
     {
-        parent::$nameTable = self::NOMBRE_TABLA;
+        parent::$nameTable = self::NAME_TABLE;
         parent::$queryInsert = INTSERT_USER;
         parent::$queryUpdate = UPDATE_USER;
     }
