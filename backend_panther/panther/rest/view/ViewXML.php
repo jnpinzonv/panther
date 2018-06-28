@@ -16,7 +16,7 @@ class ViewXML extends ViewAPI
     public function viewPrint($body)
     {
         http_response_code($body->getCode());
-        header('Content-Type: text/xml');
+        header('Content-Type: text/xml'); 
         
         $xml = new SimpleXMLElement('<answer/>');
         self::covertArray($body, $xml);

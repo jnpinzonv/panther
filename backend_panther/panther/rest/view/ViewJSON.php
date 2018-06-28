@@ -17,6 +17,7 @@ class ViewJSON extends ViewAPI
     {
         http_response_code($body->getCode());
         header('Content-Type: application/json; charset=utf8');
+   
         echo json_encode($body, JSON_PRETTY_PRINT);
         exit();
     }

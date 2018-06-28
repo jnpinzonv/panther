@@ -36,6 +36,70 @@ class Person
      * @var Rol roles
      */
     public $phone;
+    /**
+     * @return the $id
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @return the $name
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @return the $lastName
+     */
+    public function getLastName()
+    {
+        return $this->lastName;
+    }
+
+    /**
+     * @return the $phone
+     */
+    public function getPhone()
+    {
+        return $this->phone;
+    }
+
+    /**
+     * @param number $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @param string $name
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
+    /**
+     * @param string $lastName
+     */
+    public function setLastName($lastName)
+    {
+        $this->lastName = $lastName;
+    }
+
+    /**
+     * @param Rol $phone
+     */
+    public function setPhone($phone)
+    {
+        $this->phone = $phone;
+    }
+ 
 
     
 }

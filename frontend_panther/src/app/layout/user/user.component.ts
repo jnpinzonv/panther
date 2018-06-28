@@ -18,7 +18,7 @@ export class UserComponent {
         this.data = new User();
         this.data.name = 'dav';
         this.data.lastName = 'san';
-        this.data.phone = '311';
+        this.data.phone = 311;
     }
 
     save() {
