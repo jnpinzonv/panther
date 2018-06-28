@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { User } from './entities/user';
 import { Observable } from 'rxjs';
 import { HttpHeaders } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 const httpOptions = {
     headers: new HttpHeaders({
@@ -13,12 +14,13 @@ const httpOptions = {
 
 
 @Injectable()
-export class PHService {
+export class AppService {
     private _base = 'http://localhost/j4panther/rest/';
     private _urlUser = `${this._base}persons/`;
 
   constructor(
     private http: HttpClient,
+    private router: Router
   ) {}
 
   getUsers(): Observable<User[]> {
@@ -36,7 +38,8 @@ export class PHService {
 
   createUser(data) {
     this.http.post<User[]>(`${this._urlUser}`, data, httpOptions).subscribe(
-      () => {});
+        () => { this.router.navigate(['/user-show']); },
+    );
   }
 
   deleteUser(id) {
