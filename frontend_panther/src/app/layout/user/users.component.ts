@@ -30,7 +30,7 @@ export class UsersComponent {
     save() {
         this.editUser = false;
         if ( this.data.id ) {
-            this._PHService.editUser(this.data);
+            this._PHService.editUser(this.data,this.data.id);
         } else { this._PHService.createUser(this.data); }
         this.initTable();
     }

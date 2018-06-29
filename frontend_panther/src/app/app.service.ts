@@ -31,8 +31,8 @@ export class AppService {
     return this.http.get<User[]>(`${this._urlUser}${id}`);
   }
 
-  editUser(data) {
-    this.http.put<User[]>(`${this._urlUser}`, data).subscribe(
+  editUser(data,id) {	 
+    this.http.put<User[]>(`${this._urlUser}${id}`, data, httpOptions).subscribe(
       () => {});
   }
 
@@ -43,7 +43,7 @@ export class AppService {
   }
 
   deleteUser(id) {
-    this.http.delete(`${this._urlUser}${id}`).subscribe(
+    this.http.delete(`${this._urlUser}${id}`, httpOptions).subscribe(
       () => {
         window.location.reload();
       });

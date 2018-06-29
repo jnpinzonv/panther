@@ -202,7 +202,7 @@ abstract class Request
     }
 
     /**
-     * Método para eliminar un elemento de forma suab
+     * Método para eliminar un elemento de forma suave
      *
      * @param unknown $id
      *            del elemento
